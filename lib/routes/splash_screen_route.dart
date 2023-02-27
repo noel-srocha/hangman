@@ -16,10 +16,30 @@ class _SplashScreenRouteState extends State<SplashScreenRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: CircularImage(
-        image: AssetImage(""),
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        const CircularImage(
+          image: AssetImage("assets/images/splash_screen.png"),
+        ),
+        const Padding(
+          padding: EdgeInsets.symmetric(vertical: 25),
+          child: Text(
+            "Aguarde...",
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: LinearProgressIndicator(
+            backgroundColor: Colors.blue[200],
+            valueColor: AlwaysStoppedAnimation<Color?>(Colors.blue[900]),
+          ),
+        ),
+      ],
     );
   }
 }
